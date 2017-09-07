@@ -1,0 +1,6 @@
+---
+# vars file for ethereum
+
+parity_version: 1.7.2
+parity_deb: parity_1.7.2_amd64.deb
+parity_deb_checksum: 30051522f18cf223f523ffafffbc0c43

@@ -1,0 +1,7 @@
+- hosts: etherlifeserver
+  user: root
+  roles:
+    - node
+    - geth
+    - dev
+    - parity

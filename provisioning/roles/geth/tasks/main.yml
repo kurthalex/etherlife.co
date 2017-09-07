@@ -1,0 +1,7 @@
+- name: add ethereum ppa
+  apt_repository: repo='ppa:{{ item }}' update_cache=yes
+  with_items:
+    - ethereum/ethereum
+
+- name: install geth
+  apt: pkg=geth state=installed

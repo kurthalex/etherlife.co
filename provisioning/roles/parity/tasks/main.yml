@@ -1,0 +1,16 @@
+# PARITY
+
+- name: check parity installed
+  stat: path=/usr/bin/parity
+  register: parity_installed
+
+- name : download parity package
+  get_url:
+    url=http://d1h4xl4cr1h0mo.cloudfront.net/beta/x86_64-unknown-debian-gnu/{{ parity_deb }}
+    dest=/tmp/
+    validate_certs=no
+  when: not parity_installed.stat.exists
+
+- name: install parity
+  command: chdir=/tmp gdebi --non-interactive {{ parity_deb }}
+  when: not parity_installed.stat.exists
