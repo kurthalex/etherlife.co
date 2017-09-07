@@ -1,0 +1,5 @@
+- hosts: etherlifeserver
+  user: vagrant
+  become: yes
+  roles:
+    - node
